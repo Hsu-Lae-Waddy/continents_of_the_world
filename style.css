@@ -3,6 +3,20 @@
     padding: 0;
    
 }
+h1{
+    text-align: center;
+    margin-bottom: 30px;
+}
+a{
+    text-decoration: none;
+}
+a:visited{
+    color:#005C46; 
+
+}
+a:link{
+    color: #005C46;
+}
 .iconfortitle{
     width: 32px;
     height: 32px;
@@ -15,16 +29,21 @@
     display: flex;
     padding: 10px;
     border: 2px solid darkblue;
-    font: 2em sans-serif;
+    font-size: 1.5rem;
+    font-family: Helvetica;
     justify-content: space-around;
-    background-color: cornflowerblue;
-    color: white; 
+    background-color:#AFB9BF;
+    color:#005C46; 
+    font-weight:bold;
+    justify-items: center;
+    align-items: center;
+
 }
 .HomePageimags{
     display: flex;
     padding-right: 20px;
     padding-left: 20px;
-    background-color: rgb(123, 208, 237);
+    background-color:#70DCFF;
 }
 .Continentstext{
   width: 30%;
@@ -87,6 +106,13 @@
   display: inline-block; 
   margin-right: 6px;
 }
+.America {
+  background-color:#FFCA05;
+  width: 15px;
+  height: 15px;
+  display: inline-block; 
+  margin-right: 6px;
+}
 .text{
     padding: 20px;
 }
@@ -119,6 +145,7 @@
 }
 .cardText{
     padding: 15px;
+    line-height: 2;
 }
 .cardText h3{
     margin: 0 0 8px;
