@@ -29,7 +29,7 @@ a:link{
 .menuBar{
     display: flex;
     padding: 10px;
-    border: 2px solid darkblue;
+    border: 2px solid #AFB9BF;
     font-size: 1.5rem;
     font-family: Helvetica;
     justify-content: space-around;
@@ -44,17 +44,19 @@ a:link{
     display: flex;
     padding-right: 20px;
     padding-left: 20px;
-    background-color:#70DCFF;
+    background-color: #e0f7fa;
 }
 .Continentstext{
-  width: 30%;
+  width: 20%;
   padding: 20px;
+  background-color:  #e0f7fa;
 }
 .Continentstext p{
     padding: 10px;
+    line-height: 1.2rem;
 }
 .Continentsimg{
-    width: 80%;
+    width: 90%;
     height: auto;
 }
 
@@ -116,6 +118,7 @@ a:link{
 }
 .text{
     padding: 20px;
+    background-color: #e0f7fa;
 }
 .text p{
     padding-top: 5px;
@@ -138,6 +141,7 @@ a:link{
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  background-color:  #e0f7fa;
 }
 .cardImage{
     width: 100%;
@@ -172,4 +176,32 @@ a:link{
 }
 .Countries h2{
     line-height: 1.2em;;
+}
+.video-background {
+  position: relative;
+  width: 100%;
+  height: 100vh; 
+  overflow: hidden;
+}
+.video-background video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+    color: #004d40;
+    line-height: 1.6;
+}
+#types ul{
+  padding-left: 60px;
 }
