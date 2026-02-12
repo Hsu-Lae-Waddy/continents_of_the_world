@@ -1,7 +1,14 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
    
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fafafa;
+  color: #111;
+  line-height: 1.6;
 }
 
 h1{
@@ -10,6 +17,7 @@ h1{
 }
 a{
     text-decoration: none;
+    margin-bottom: 10px;
 }
 a:visited{
     color:#005C46; 
@@ -18,6 +26,12 @@ a:visited{
 a:link{
     color: #005C46;
 }
+a:hover,
+a.active {
+  color: #02588A;
+  border-bottom: 2px solid #005C46;
+}
+
 .iconfortitle{
     width: 32px;
     height: 32px;
@@ -204,4 +218,11 @@ main {
 }
 #types ul{
   padding-left: 60px;
+}
+.site-footer {
+  text-align: center;
+  padding: 15px 0;
+  background: #02588A;
+  color: #ddd;
+  font-size: 0.9rem;
 }
