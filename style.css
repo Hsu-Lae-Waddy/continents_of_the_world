@@ -283,6 +283,18 @@ button:hover {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0
+}
+@keyframes fadeInUp {
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 /* Progress Bar */
 .progress-bar {
@@ -298,6 +310,7 @@ button:hover {
     width: 0%;
     background: #1e3c72;
     transition: width 0.4s ease-in-out;
+    box-shadow: 0 0 10px rgba(0,255,255,0.7);
 }
 
 .progress-text {
@@ -305,4 +318,57 @@ button:hover {
     font-size: 14px;
     margin-bottom: 15px;
     color: #333;
+}.video-background {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.video-background video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0; /* video is at the bottom */
+}
+
+/* Dark overlay for readability */
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* dim the video */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 1; /* above video */
+}
+
+/* Text styling */
+.video-overlay h1 {
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow:
+      0 0 10px rgba(255,255,255,0.8),
+      0 0 30px rgba(0,150,255,0.6);
+  animation: fadeUp 1.2s ease forwards;
+}
+
+/* Smooth entrance animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
