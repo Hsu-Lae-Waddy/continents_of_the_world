@@ -7,7 +7,15 @@
      <link rel="icon" type="image/png" href="assets/download-removebg-preview.png">
     <link rel="stylesheet" href="style.css" />
     <script src="https://kit.fontawesome.com/17d5dc0279.js" crossorigin="anonymous"></script>
-</head>
+</head><style> 
+ body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e0f7fa;
+    color: #004d40;
+    line-height: 1.6;
+ }</style>
 <body>
     <header>
     <li class="menuBar">
@@ -19,5 +27,148 @@
         <ul><button>subscribe</button></ul>
     </li>
     </header>
+    <div class="quiz-container">
+    <h1>🌍 Continents Quiz</h1>
+    <!-- Progress Bar -->
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+    <div class="progress-text" id="progressText">0% Completed</div>
+
+    <form id="quizForm">
+
+        <div class="question">
+            <h3>1. Which is the largest continent?</h3>
+            <label><input type="radio" name="q1" value="Asia"> Asia</label>
+            <label><input type="radio" name="q1" value="Africa"> Africa</label>
+            <label><input type="radio" name="q1" value="Europe"> Europe</label>
+        </div>
+
+        <div class="question">
+            <h3>2. Which continent has the Amazon Rainforest?</h3>
+            <label><input type="radio" name="q2" value="South America"> South America</label>
+            <label><input type="radio" name="q2" value="Africa"> Africa</label>
+            <label><input type="radio" name="q2" value="Asia"> Asia</label>
+        </div>
+
+        <div class="question">
+            <h3>3. Which continent is the coldest?</h3>
+            <label><input type="radio" name="q3" value="Antarctica"> Antarctica</label>
+            <label><input type="radio" name="q3" value="Europe"> Europe</label>
+            <label><input type="radio" name="q3" value="Australia"> Australia</label>
+        </div>
+        <div class="question">
+<h3>4. Sahara Desert is in?</h3>
+<label><input type="radio" name="q4" value="Africa"> Africa</label>
+<label><input type="radio" name="q4" value="Asia"> Asia</label>
+<label><input type="radio" name="q4" value="Australia"> Australia</label>
+</div>
+
+<div class="question">
+<h3>5. Smallest continent?</h3>
+<label><input type="radio" name="q5" value="Australia"> Australia</label>
+<label><input type="radio" name="q5" value="Europe"> Europe</label>
+<label><input type="radio" name="q5" value="Antarctica"> Antarctica</label>
+</div>
+
+<div class="question">
+<h3>6. Mount Everest is in?</h3>
+<label><input type="radio" name="q6" value="Asia"> Asia</label>
+<label><input type="radio" name="q6" value="Europe"> Europe</label>
+<label><input type="radio" name="q6" value="South America"> South America</label>
+</div>
+
+<div class="question">
+<h3>7. Which continent has the most countries?</h3>
+<label><input type="radio" name="q7" value="Africa"> Africa</label>
+<label><input type="radio" name="q7" value="Asia"> Asia</label>
+<label><input type="radio" name="q7" value="Europe"> Europe</label>
+</div>
+
+<div class="question">
+<h3>8. Brazil is in?</h3>
+<label><input type="radio" name="q8" value="South America"> South America</label>
+<label><input type="radio" name="q8" value="North America"> North America</label>
+<label><input type="radio" name="q8" value="Europe"> Europe</label>
+</div>
+
+<div class="question">
+<h3>9. The Great Barrier Reef is in?</h3>
+<label><input type="radio" name="q9" value="Australia"> Australia</label>
+<label><input type="radio" name="q9" value="Asia"> Asia</label>
+<label><input type="radio" name="q9" value="Africa"> Africa</label>
+</div>
+
+<div class="question">
+<h3>10. Canada is in?</h3>
+<label><input type="radio" name="q10" value="North America"> North America</label>
+<label><input type="radio" name="q10" value="Europe"> Europe</label>
+<label><input type="radio" name="q10" value="Asia"> Asia</label>
+</div>
+
+
+        <button type="button" onclick="checkAnswers()">Submit</button>
+
+        <div class="result" id="result"></div>
+    </form>
+</div>
+<footer class="site-footer">
+    <p>Created by Hsu-Lae-Waddy | Educational Project</p>
+  </footer>
+
+<script>
+const totalQuestions = 10;
+const form = document.getElementById("quizForm");
+const progressFill = document.getElementById("progressFill");
+const progressText = document.getElementById("progressText");
+
+form.addEventListener("change", updateProgress);
+
+function updateProgress() {
+    let answered = 0;
+
+    for (let i = 1; i <= totalQuestions; i++) {
+        const radios = form.elements["q" + i];
+        for (let radio of radios) {
+            if (radio.checked) {
+                answered++;
+                break;
+            }
+        }
+    }
+
+    const percent = (answered / totalQuestions) * 100;
+    progressFill.style.width = percent + "%";
+    progressText.textContent = Math.round(percent) + "% Completed";
+}
+
+function checkAnswers() {
+    let score = 0;
+
+    const answers = {
+        q1:"Asia",
+        q2:"South America",
+        q3:"Antarctica",
+        q4:"Africa",
+        q5:"Australia",
+        q6:"Asia",
+        q7:"Africa",
+        q8:"South America",
+        q9:"Australia",
+        q10:"North America"
+    };
+
+    for (let key in answers) {
+        if (form.elements[key].value === answers[key]) {
+            score++;
+        }
+    }
+
+    const result = document.getElementById("result");
+    result.innerHTML = "You scored " + score + " out of 10 🎉";
+    result.style.color = score >= 7 ? "green" : "red";
+}
+</script>
+
 </body>
 </html>

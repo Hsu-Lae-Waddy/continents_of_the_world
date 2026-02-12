@@ -9,6 +9,7 @@ body {
   background: #fafafa;
   color: #111;
   line-height: 1.6;
+
 }
 
 h1{
@@ -225,4 +226,83 @@ main {
   background: #02588A;
   color: #ddd;
   font-size: 0.9rem;
+}
+.quiz-container {
+    background: white;  
+    width: 90%;
+    max-width: 600px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+.question {
+    margin-bottom: 20px;
+}
+
+.question h3 {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+label:hover {
+    background: #f0f4ff;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: #1e3c72;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #16305a;
+}
+
+.result {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+.quiz-container{
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+/* Progress Bar */
+.progress-bar {
+    width: 100%;
+    background: #e0e0e0;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 15px;
+    width: 0%;
+    background: #1e3c72;
+    transition: width 0.4s ease-in-out;
+}
+
+.progress-text {
+    text-align: right;
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: #333;
 }
